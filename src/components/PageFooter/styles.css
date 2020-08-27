@@ -11,6 +11,10 @@ footer p {
     font-size: 1.3rem;
 }
 
+footer p svg {
+    margin-right: 7px;
+}
+
 footer h2 {
     letter-spacing: 0.2rem;
     margin-bottom: 1rem;

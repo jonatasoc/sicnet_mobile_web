@@ -1,2 +1,3 @@
-node_modules
-estrutura_antiga
+node_modules/
+estrutura_antiga/
+build/
