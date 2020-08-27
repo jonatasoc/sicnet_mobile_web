@@ -7,6 +7,7 @@ export default function Android() {
             <PageHeader />
             <div id="page-android">
                 <h1>Olá! Android!</h1>
+                <h1>Utilizar Carousel do ReactStrap</h1>
             </div>
         </>
     )

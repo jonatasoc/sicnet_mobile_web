@@ -1,5 +1,8 @@
 
-/** HEADER **/
+header {
+  width: 98vw;
+  margin: 0 auto;
+}
 
 #header-nav {
     border-radius: 0;
@@ -15,19 +18,24 @@
 }
    
       
-  #intro {
+#intro {
+
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 400;
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 50px;
+  background-color: #004d6b;
+  padding: 8px 4px;
+  box-shadow: 0 8px 6px -6px #999;  
+  border-radius: 5px;
+}    
+
+  @media (min-width: 700px) {
+    header {
+      width: 60vw;
+    }
+  }
   
-    color: #ffffff;
-    font-size: 30px;
-    font-weight: 400;
-    display: block;
-    text-align: center;
-    margin-top: 5px;
-    margin-bottom: 50px;
-    background-color: #004d6b;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    box-shadow: 0 8px 6px -6px #999;  
-  }    
-  
-  /* END HEADER */

@@ -1,6 +1,5 @@
-
-
 #page-home-content h2 {
+    color: var(--color-text-in-primary);
     font-size: 1.7rem;
     text-align: center;
     margin-bottom: 25px;
@@ -33,7 +32,7 @@
     -webkit-border-radius: 10px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    border-bottom: 25px solid white;
+    padding-bottom: 2rem;
 }
     
 .section-select-os p {
@@ -90,13 +89,14 @@ svg[data-icon='apple'] {
     #page-home-content h2 {
         font-size: 2rem;
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         margin-top: -25px;
     }
 
     .section-select {
         display: flex;
         max-width: 60vw;
+        height: 60vh;
         flex-direction: row;
         justify-content: center;    
         align-items: center;

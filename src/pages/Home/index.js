@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PageHeader from '../../components/PageHeader';
+import PageFooter from '../../components/PageFooter';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './styles.css'
 
@@ -10,7 +11,7 @@ export default function Home() {
             <PageHeader />
             <div id="page-home">
                 <div id="page-home-content" className="animated fadeIn">
-                <h2 className="">Selecione o tipo de sistema do seu smartphone</h2>
+                    <h2 className="">Selecione o tipo de sistema do seu smartphone</h2>
                     <div className="section-select">
                         <div className="section-select-os">
                             <Link to='/android'>
@@ -28,6 +29,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+            <PageFooter />
         </>
     )
 }
