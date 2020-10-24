@@ -1,14 +1,14 @@
 import React from 'react';
-import PageHeader from '../../components/PageHeader';
+import Header from '../../components/Header';
 
 export default function Android() {
-    return (
-        <>
-            <PageHeader />
-            <div id="page-android">
-                <h1>Olá! Android!</h1>
-                <h1>Utilizar Carousel do ReactStrap</h1>
-            </div>
-        </>
-    )
+  return (
+    <>
+      <Header />
+      <div id="page-android">
+        <h1>Olá! Android!</h1>
+        <h1>Utilizar Carousel do ReactStrap</h1>
+      </div>
+    </>
+  )
 }

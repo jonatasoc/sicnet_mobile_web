@@ -20,12 +20,12 @@
 
 #page-home hr {
     border: 0;
-    width: 32%;               
+    width: 32%;
     background-color:#e0e0e0;
     height: 1px;
 }
 
-.section-select-os {   
+.section-select-os {
     text-align: center;
     width: 55vw;
     transition: 0.3s ease;
@@ -34,7 +34,7 @@
     border-radius: 5px;
     padding-bottom: 2rem;
 }
-    
+
 .section-select-os p {
     font-family: 'Poppins', sans-serif;
     font-size: 1.4rem;
@@ -47,7 +47,7 @@
     height: 5rem;
     width: auto;
 }
-        
+
 svg[data-icon="android"] {
     margin-top: 15px;
 }
@@ -67,15 +67,15 @@ p.ios {
 svg[data-icon='apple'] {
     color: #000;
 }
-    
+
 .section-select-os:hover {
     /* -webkit-transform: translate(0,-5px); /* Safari */
-    transform: translate(0,-3px); 
+    transform: translate(0,-3px);
     background-color: #43A8ED;
     cursor: pointer;
     /* border-bottom: 5px solid #43A8ED; */
 }
-    
+
 .section-select-os:hover svg,
 .section-select-os:hover p,
 .section-select-os:focus svg,
@@ -83,7 +83,7 @@ svg[data-icon='apple'] {
 .section-select-os:active svg,
 .section-select-os:visited p {
     color: #fff;
-}    
+}
 
 @media (min-width: 700px) {
     #page-home-content h2 {
@@ -98,24 +98,23 @@ svg[data-icon='apple'] {
         max-width: 60vw;
         height: 60vh;
         flex-direction: row;
-        justify-content: center;    
+        justify-content: center;
         align-items: center;
-    }    
-    .section-select-os {   
+    }
+    .section-select-os {
         width: 55vw;
         max-width: 400px;
         margin-right: 10px;
     }
-    .section-select-os p{   
+    .section-select-os p{
         font-size: 1.8rem;
-    }    
+    }
     #page-home svg {
         height: 7rem;
         width: auto;
-    }    
-    
+    }
+
     #page-home hr {
         display: none;
     }
 }
-    

@@ -7,6 +7,7 @@ import Routers from './routers';
 
 library.add(fas, fab);
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 function App() {
   return (
     <Routers />

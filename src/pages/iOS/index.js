@@ -1,13 +1,13 @@
 import React from 'react';
-import PageHeader from '../../components/PageHeader';
+import Header from '../../components/Header';
 
 export default function Ios() {
-    return (
-        <>
-            <PageHeader />
-            <div id="page-android">
-                <h1>Olá! iOS!</h1>
-            </div>
-        </>
-    )
+  return (
+    <>
+      <Header />
+      <div id="page-android">
+        <h1>Olá! iOS!</h1>
+      </div>
+    </>
+  )
 }
