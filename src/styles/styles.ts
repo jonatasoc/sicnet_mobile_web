@@ -9,16 +9,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html, body, #root {
+    width: 60vw;
     height: 100vh;
+    margin: 0 auto;
+    max-width: 1280px;
 }
 
   body, input, button {
     font: 16px "Poppins", sans-serif;
-  }
-
-  #root {
-    max-width: 1280px;
-    margin: 0 auto;
   }
 
   :root {

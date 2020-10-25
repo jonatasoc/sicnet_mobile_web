@@ -3,7 +3,7 @@ import filesize from 'filesize';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import { Container } from './styles';
+import { Title, Container } from './styles';
 import UploadFile from '../../components/UploadFile';
 import FileList from '../../components/FileList';
 
@@ -23,6 +23,7 @@ const Upload: React.FC = () => {
   <div>
     <Header />
     <Container>
+      <Title>Selecione abaixo a versão</Title>
       <UploadFile onUpload={submitFile} />
           {/* {!!uploadedFiles.length && <FileList files={uploadedFiles} />} */}
     </Container>
