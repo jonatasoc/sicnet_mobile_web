@@ -12,7 +12,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 94vw;
+    /* max-width: 94vw; */
     margin: 0 auto;
     border-radius: 1.2rem;
     padding: 15px 0px;
@@ -27,7 +27,7 @@
 
 .section-select-os {
     text-align: center;
-    width: 55vw;
+    /* width: 55vw; */
     transition: 0.3s ease;
     -webkit-border-radius: 10px;
     -moz-border-radius: 5px;
@@ -104,7 +104,7 @@ svg[data-icon='apple'] {
     .section-select-os {
         width: 55vw;
         max-width: 400px;
-        margin-right: 10px;
+        /* margin-right: 10px; */
     }
     .section-select-os p{
         font-size: 1.8rem;

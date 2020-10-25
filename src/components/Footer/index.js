@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import './styles.css';
 
-export default function PageFooter() {
+export default function Footer() {
     return (
         <footer >
           <section id="contato">

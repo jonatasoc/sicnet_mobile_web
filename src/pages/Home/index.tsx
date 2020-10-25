@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import PageHeader from '../../components/Header';
 import PageFooter from '../../components/Footer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import './styles.css'
+import './styles.css';
 
 const Home:React.FC = () => {
   return (
