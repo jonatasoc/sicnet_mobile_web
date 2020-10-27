@@ -6,3 +6,5 @@ build/
 .eslintignore
 .eslintrc.json
 prettier.config.js
+.vscode
+

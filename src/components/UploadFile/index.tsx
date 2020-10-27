@@ -27,24 +27,31 @@ const UploadFile: React.FC<UploadProps> = ({ onUpload }: UploadProps) => {
 
   return (
     <>
-      <label htmlFor="version">Versão</label>
-      <input name="version" placeholder="Informe o número da versão" />
-      <Dropzone accept=".apx, .ipa" onDropAccepted={(file) => onUpload(file)}>
+      <div>
+        <label htmlFor="os">Versão</label>
+        <input name="os" placeholder="Informe o número da versão" />
+      </div>
+      <div>
+        <label htmlFor="version">Versão</label>
+        <input name="version" placeholder="Informe o número da versão" />
+      </div>
+      <Dropzone accept=".apx, .ipa" onDropAccepted={file => onUpload(file)}>
         {({
           getRootProps,
           getInputProps,
           isDragActive,
-          isDragReject
-        }): any => (
-          <DropContainer
-            {...getRootProps()}
-            isDragActive={isDragActive}
-            isDragReject={isDragReject}
-          >
-            <input {...getInputProps()} data-testid="upload" />
-            {renderDragMessage(isDragActive, isDragReject)}
-          </DropContainer>
-        )}
+          isDragReject,
+        }): any =>
+          (
+            <DropContainer
+              {...getRootProps()}
+              isDragActive={isDragActive}
+              isDragReject={isDragReject}
+            >
+              <input {...getInputProps()} data-testid="upload" />
+              {renderDragMessage(isDragActive, isDragReject)}
+            </DropContainer>
+          )}
       </Dropzone>
     </>
   );
