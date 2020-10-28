@@ -27,15 +27,13 @@ export const DropContainer = styled.div.attrs({
 
   transition: height 0.2s ease;
 
-  ${(props: UploadProps): false | FlattenSimpleInterpolation =>
-    props.isDragActive && dragActive}
+  ${(props: UploadProps): false | FlattenSimpleInterpolation => props.isDragActive && dragActive}
 
-  ${(props: UploadProps): false | FlattenSimpleInterpolation =>
-    props.isDragReject && dragReject}
+  ${(props: UploadProps): false | FlattenSimpleInterpolation => props.isDragReject && dragReject}
 `;
 
 const messageColors = {
-  default: '#5636D3',
+  default: '#3f51b5;',
   error: '#e83f5b',
   success: '#12a454',
 };

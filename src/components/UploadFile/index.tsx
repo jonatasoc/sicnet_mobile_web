@@ -5,9 +5,10 @@ import { DropContainer, UploadMessage } from './styles';
 
 interface UploadProps {
   onUpload: Function;
+  osType: string;
 }
 
-const UploadFile: React.FC<UploadProps> = ({ onUpload }: UploadProps) => {
+const UploadFile: React.FC<UploadProps> = ({ onUpload, osType }: UploadProps) => {
   function renderDragMessage(
     isDragActive: boolean,
     isDragRejest: boolean,
@@ -27,7 +28,12 @@ const UploadFile: React.FC<UploadProps> = ({ onUpload }: UploadProps) => {
 
   return (
     <>
-      <Dropzone accept=".apx,.ipa" onDropAccepted={file => onUpload(file)}>
+      <Dropzone
+        accept={osType === 'Android' ? 'application/vnd.android.package-archive' : '.ipa'}
+        onDropAccepted={file => onUpload(file)}
+        maxFiles={1}
+        multiple={false}
+      >
         {({
           getRootProps,
           getInputProps,

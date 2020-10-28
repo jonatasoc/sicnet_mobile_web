@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { shade } from 'polished';
 
 export const Container = styled.div`
     box-shadow: 0 7px 30px -10px rgba(150,170,180,0.5);
@@ -54,4 +53,18 @@ export const UploadFooter = styled.section`
     font-size: 1.2rem;
     margin-right: 10px;
   }
+`;
+
+export const FileInfo = styled.div`
+    strong {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #363f5f;
+      margin-top: 5px;
+    }
+  }
+`;
+
+export const UploadFileErrMsg = styled.p`
+  color: #f44336;
 `;

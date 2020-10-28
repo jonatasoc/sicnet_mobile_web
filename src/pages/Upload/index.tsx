@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import filesize from 'filesize';
 import { FiAlertTriangle } from 'react-icons/fi';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -9,9 +8,10 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import { Title, Container, UploadFooter, UploadInfoContainer } from './styles';
+import {
+  Title, Container, UploadFooter, UploadInfoContainer, FileInfo, UploadFileErrMsg,
+} from './styles';
 import UploadFile from '../../components/UploadFile';
-import FileList from '../../components/FileList';
 import api from '../../services/api';
 import addFileImg from '../../assets/add_file.svg';
 
@@ -23,32 +23,71 @@ const useStyles = makeStyles((theme: Theme) =>
         width: '25ch',
       },
     },
-  }),
-);
+  }));
+
+interface FileProps {
+  file: File;
+  name: string;
+}
 
 const Upload: React.FC = () => {
-  const [uploadedFile, setUploadedFiles] = useState<File>();
+  const [uploadedFile, setUploadedFiles] = useState<FileProps | any>(null);
   const [osType, setOsType] = useState('Android');
+  const [appVersion, setAppVersion] = useState('');
+  const [errAppVersionValidation, setErrAppVersionValidation] = useState(false);
+  const [errAppFileValidation, setErrAppFileValidation] = useState(false);
+
   const classesMaterialButtons = useStyles();
   const history = useHistory();
+
+  async function submitFile(): Promise<void> {
+
+    if (appVersion === '') {
+      setErrAppVersionValidation(true);
+      return;
+    }
+
+    if (uploadedFile === null) {
+      setErrAppFileValidation(true);
+      return;
+    }
+
+    const data = new FormData();
+
+    data.append('version_number', appVersion);
+    data.append('os_type', osType);
+    data.append('app', uploadedFile?.file);
+
+    try {
+      await api.post('apps', data);
+      console.log('Done!');
+      history.push('/');
+    } catch (err) {
+      console.log(err.response.error);
+    }
+  }
+
+  function handleUpload(files: File[]) {
+    setErrAppFileValidation(false);
+    const newFile = files[0];
+    const selectedFile = {
+      file: newFile,
+      name: newFile.name,
+    };
+    setUploadedFiles(selectedFile);
+  }
 
   const handleOsTypeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setOsType(event.target.value);
   };
+  const handleAppVersionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setErrAppVersionValidation(false);
+    setAppVersion(event.target.value);
+  };
 
-  function submitFile(file: File): void {
-    // const selectedfile = {
-    //   file,
-    //   name: file.name,
-    //   readableSize: filesize(file.size),
-    // };
-
-    setUploadedFiles(file);
-  }
-
-  function handleUpload() {
-    return;
-  }
+  useEffect(() => {
+    setUploadedFiles(null);
+  }, [osType]);
 
   return (
     <div>
@@ -60,16 +99,18 @@ const Upload: React.FC = () => {
             <div className={classesMaterialButtons.root}>
               <TextField
                 required
-                id="version-number"
+                id="version_number"
                 label="Versão"
-                defaultValue=""
-                placeholder="Informe a versão"
+                helperText="Informe a versão"
                 variant="outlined"
+                value={appVersion}
+                onChange={handleAppVersionChange}
+                error={errAppVersionValidation}
               />
               <TextField
-                id="outlined-select-currency"
+                id="os_type"
                 select
-                label="Select"
+                label="Selecione"
                 value={osType}
                 onChange={handleOsTypeChange}
                 helperText="Selecione o tipo de Sistema"
@@ -83,18 +124,23 @@ const Upload: React.FC = () => {
             </MenuItem>
               </TextField>
             </div>
-            <UploadFile onUpload={submitFile} />
-            {/* {!!uploadedFiles.length && <FileList files={uploadedFiles} />} */}
+            <UploadFile onUpload={handleUpload} osType={osType} />
+            {errAppFileValidation && <UploadFileErrMsg>Necessário selecionar o arquivo para envio.</UploadFileErrMsg>}
+            {uploadedFile?.name && (
+              <FileInfo>
+                <strong>{uploadedFile.name}</strong>
+              </FileInfo>
+            )}
             <UploadFooter>
               <p>
                 <FiAlertTriangle size={16} style={{ display: 'block' }} />
-            Permitido apenas arquivos .apk ou .ipa
-          </p>
+                Permitido apenas arquivos {osType === 'Android' ? '.apk' : '.ipa'}.
+              </p>
               <div className={classesMaterialButtons.root}>
                 <Button onClick={() => history.push('/')} variant="contained" color="default" size="large" component="span">
                   Voltar
             </Button>
-                <Button variant="contained" color="primary" size="large" component="span">
+                <Button onClick={submitFile} variant="contained" color="primary" size="large" component="span">
                   Upload
             </Button>
               </div>
