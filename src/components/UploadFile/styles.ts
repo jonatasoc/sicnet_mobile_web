@@ -19,10 +19,11 @@ const dragReject = css`
 export const DropContainer = styled.div.attrs({
   className: 'dropzone',
 })`
+  margin-top: 15px;
   border: 1.5px dashed #969cb3;
   border-radius: 5px;
   cursor: pointer;
-  padding: 2rem;
+  padding: 2rem 3rem;
 
   transition: height 0.2s ease;
 

@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-
 import Dropzone from 'react-dropzone';
+
 import { DropContainer, UploadMessage } from './styles';
 
 interface UploadProps {
@@ -35,7 +35,7 @@ const UploadFile: React.FC<UploadProps> = ({ onUpload }: UploadProps) => {
         <label htmlFor="version">Versão</label>
         <input name="version" placeholder="Informe o número da versão" />
       </div>
-      <Dropzone accept=".apx, .ipa" onDropAccepted={file => onUpload(file)}>
+      <Dropzone accept=".apx,.ipa" onDropAccepted={file => onUpload(file)}>
         {({
           getRootProps,
           getInputProps,

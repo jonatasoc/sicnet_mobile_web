@@ -20,13 +20,14 @@ export const Title = styled.h1`
   line-height: 54px;
   color: #363f5f;
   text-align: center;
+  margin-bottom: 30px;
 `;
 
 export const UploadFooter = styled.section`
-  margin-top: 36px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
 
   p {
     display: flex;
@@ -34,22 +35,13 @@ export const UploadFooter = styled.section`
     font-size: 12px;
     line-height: 18px;
     color: #969cb3;
+    margin-bottom: 15px;
 
-    img {
+    svg {
       margin-right: 5px;
     }
   }
-
-  button {
-    background: #ff872c;
-    color: #fff;
-    border-radius: 5px;
-    padding: 15px 80px;
-    border: 0;
-    transition: background-color 0.2s;
-
-    &:hover {
-      background: ${shade(0.2, '#ff872c')};
-    }
+  .MuiButton-containedSizeLarge {
+    font-size: 1.2rem;
   }
 `;
