@@ -27,14 +27,6 @@ const UploadFile: React.FC<UploadProps> = ({ onUpload }: UploadProps) => {
 
   return (
     <>
-      <div>
-        <label htmlFor="os">Versão</label>
-        <input name="os" placeholder="Informe o número da versão" />
-      </div>
-      <div>
-        <label htmlFor="version">Versão</label>
-        <input name="version" placeholder="Informe o número da versão" />
-      </div>
       <Dropzone accept=".apx,.ipa" onDropAccepted={file => onUpload(file)}>
         {({
           getRootProps,

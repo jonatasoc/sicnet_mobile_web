@@ -4,15 +4,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import PageHeader from '../../components/Header';
 import PageFooter from '../../components/Footer';
+import { Title } from './styles';
 import './styles.css';
 
-const Home:React.FC = () => {
+const Home: React.FC = () => {
   return (
     <>
       <PageHeader />
       <div id="page-home">
         <div id="page-home-content" className="animated fadeIn">
-          <h2 className="">Selecione o tipo de sistema do seu smartphone</h2>
+          <Title>Selecione o tipo de sistema do seu smartphone</Title>
           <div className="section-select">
             <div className="section-select-os">
               <Link to='/android'>
@@ -20,7 +21,7 @@ const Home:React.FC = () => {
                 <p className="android">Android</p>
               </Link>
             </div>
-            <hr/>
+            <hr />
             <div className="section-select-os">
               <Link to="/ios">
                 <FontAwesomeIcon icon={['fab', 'apple']} />
