@@ -24,10 +24,18 @@ export const UploadInfoContainer = styled.div`
     justify-content: center;
     align-items: flex-start;
 
+    div.animated {
+      flex-basis: 30%;
+    }
+
     img {
-      width: 25%;
-      height: 25%;
+      width: 80%;
+      height: auto;
       margin-left: 50px;
+    }
+
+    .MuiButton-label svg {
+      margin-right: 5px;
     }
 `;
 

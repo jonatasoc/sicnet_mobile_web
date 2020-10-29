@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { FiAlertTriangle } from 'react-icons/fi';
+import { FiAlertTriangle, FiUpload, FiArrowLeft } from 'react-icons/fi';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
+import { Animated } from "react-animated-css";
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -15,15 +16,14 @@ import UploadFile from '../../components/UploadFile';
 import api from '../../services/api';
 import addFileImg from '../../assets/add_file.svg';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      '& .MuiTextField-root': {
-        margin: theme.spacing(1),
-        width: '25ch',
-      },
+const useStyles = makeStyles((theme: Theme) => createStyles({
+  root: {
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+      width: '25ch',
     },
-  }));
+  },
+}));
 
 interface FileProps {
   file: File;
@@ -41,7 +41,6 @@ const Upload: React.FC = () => {
   const history = useHistory();
 
   async function submitFile(): Promise<void> {
-
     if (appVersion === '') {
       setErrAppVersionValidation(true);
       return;
@@ -118,14 +117,15 @@ const Upload: React.FC = () => {
               >
                 <MenuItem value="Android">
                   Android
-            </MenuItem>
+                </MenuItem>
                 <MenuItem value="iOS">
                   iOS
-            </MenuItem>
+                </MenuItem>
               </TextField>
             </div>
             <UploadFile onUpload={handleUpload} osType={osType} />
-            {errAppFileValidation && <UploadFileErrMsg>Necessário selecionar o arquivo para envio.</UploadFileErrMsg>}
+            {errAppFileValidation
+              && <UploadFileErrMsg>Necessário selecionar o arquivo para envio.</UploadFileErrMsg>}
             {uploadedFile?.name && (
               <FileInfo>
                 <strong>{uploadedFile.name}</strong>
@@ -138,21 +138,22 @@ const Upload: React.FC = () => {
               </p>
               <div className={classesMaterialButtons.root}>
                 <Button onClick={() => history.push('/')} variant="contained" color="default" size="large" component="span">
-                  Voltar
-            </Button>
+                  <FiArrowLeft />Voltar
+                </Button>
                 <Button onClick={submitFile} variant="contained" color="primary" size="large" component="span">
-                  Upload
-            </Button>
+                  <FiUpload /> Upload
+                </Button>
               </div>
             </UploadFooter>
           </div>
-          <img src={addFileImg} alt="Upload File" />
+          <Animated animationIn="bounceInRight" animationOut="zoomOutDown" animationInDuration={1000} animationOutDuration={1000} isVisible={true}>
+            <img src={addFileImg} alt="Upload File" />
+          </Animated>
         </UploadInfoContainer>
       </Container>
       <Footer />
     </div>
-  )
+  );
 };
 
 export default Upload;
-
