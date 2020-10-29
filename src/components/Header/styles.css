@@ -16,8 +16,8 @@ header {
     margin: 10px 0px;
     width: 200px;
 }
-   
-      
+
+
 #intro {
 
   color: #fff;
@@ -29,13 +29,12 @@ header {
   margin-bottom: 50px;
   background-color: #004d6b;
   padding: 8px 4px;
-  box-shadow: 0 8px 6px -6px #999;  
+  box-shadow: 0 8px 6px -6px #999;
   border-radius: 5px;
-}    
+}
 
   @media (min-width: 700px) {
     header {
-      width: 60vw;
+      width: 80vw;
     }
   }
-  
