@@ -32,6 +32,7 @@ export const Content = styled.div`
 
     @media (min-width: 700px) {
       max-width: 70vw;
+      height: 400px;
     }
   }
 
@@ -40,6 +41,7 @@ export const Content = styled.div`
     width: 32%;
     background-color: #e0e0e0;
     height: 1px;
+    margin-bottom: 15px;
   }
 `;
 

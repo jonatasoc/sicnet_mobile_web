@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
 
   html, body, #root {
     height: 100vh;
-    max-width: 1280px;
+    width: 100vw;
 }
 
   body, input, button {
@@ -28,6 +28,12 @@ const GlobalStyle = createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  @media(min-width: 700px) {
+    #root {
+      overflow: hidden;
+    }
   }
 
 `;

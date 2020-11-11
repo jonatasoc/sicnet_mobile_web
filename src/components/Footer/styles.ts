@@ -7,6 +7,11 @@ export const Container = styled.footer`
   color: #fff;
   padding: 0 0 20px 8px;
 
+  @media (min-width: 700px) {
+    position: fixed;
+    bottom: 0;
+  }
+
   hr {
     max-width: 705px;
     color: #fff;

@@ -5,25 +5,30 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
-import { Animated } from "react-animated-css";
+import { Animated } from 'react-animated-css';
 
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
 import {
-  Title, Container, UploadFooter, UploadInfoContainer, FileInfo, UploadFileErrMsg,
+  Title,
+  Container,
+  UploadFooter,
+  UploadInfoContainer,
+  FileInfo,
+  UploadFileErrMsg,
 } from './styles';
 import UploadFile from '../../components/UploadFile';
 import api from '../../services/api';
 import addFileImg from '../../assets/add_file.svg';
 
-const useStyles = makeStyles((theme: Theme) => createStyles({
-  root: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1),
-      width: '25ch',
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      '& .MuiTextField-root': {
+        margin: theme.spacing(1),
+        width: '25ch',
+      },
     },
-  },
-}));
+  }),
+);
 
 interface FileProps {
   file: File;
@@ -79,7 +84,9 @@ const Upload: React.FC = () => {
   const handleOsTypeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setOsType(event.target.value);
   };
-  const handleAppVersionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleAppVersionChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     setErrAppVersionValidation(false);
     setAppVersion(event.target.value);
   };
@@ -90,7 +97,6 @@ const Upload: React.FC = () => {
 
   return (
     <div>
-      <Header />
       <Container>
         <Title>Informe abaixo os dados da nova versão</Title>
         <UploadInfoContainer>
@@ -115,17 +121,16 @@ const Upload: React.FC = () => {
                 helperText="Selecione o tipo de Sistema"
                 variant="outlined"
               >
-                <MenuItem value="Android">
-                  Android
-                </MenuItem>
-                <MenuItem value="iOS">
-                  iOS
-                </MenuItem>
+                <MenuItem value="Android">Android</MenuItem>
+                <MenuItem value="iOS">iOS</MenuItem>
               </TextField>
             </div>
             <UploadFile onUpload={handleUpload} osType={osType} />
-            {errAppFileValidation
-              && <UploadFileErrMsg>Necessário selecionar o arquivo para envio.</UploadFileErrMsg>}
+            {errAppFileValidation && (
+              <UploadFileErrMsg>
+                Necessário selecionar o arquivo para envio.
+              </UploadFileErrMsg>
+            )}
             {uploadedFile?.name && (
               <FileInfo>
                 <strong>{uploadedFile.name}</strong>
@@ -134,24 +139,43 @@ const Upload: React.FC = () => {
             <UploadFooter>
               <p>
                 <FiAlertTriangle size={16} style={{ display: 'block' }} />
-                Permitido apenas arquivos {osType === 'Android' ? '.apk' : '.ipa'}.
+                Permitido apenas arquivos{' '}
+                {osType === 'Android' ? '.apk' : '.ipa'}.
               </p>
               <div className={classesMaterialButtons.root}>
-                <Button onClick={() => history.push('/')} variant="contained" color="default" size="large" component="span">
-                  <FiArrowLeft />Voltar
+                <Button
+                  onClick={() => history.push('/')}
+                  variant="contained"
+                  color="default"
+                  size="large"
+                  component="span"
+                >
+                  <FiArrowLeft />
+                  Voltar
                 </Button>
-                <Button onClick={submitFile} variant="contained" color="primary" size="large" component="span">
+                <Button
+                  onClick={submitFile}
+                  variant="contained"
+                  color="primary"
+                  size="large"
+                  component="span"
+                >
                   <FiUpload /> Upload
                 </Button>
               </div>
             </UploadFooter>
           </div>
-          <Animated animationIn="bounceInRight" animationOut="zoomOutDown" animationInDuration={1000} animationOutDuration={1000} isVisible={true}>
+          <Animated
+            animationIn="bounceInRight"
+            animationOut="zoomOutDown"
+            animationInDuration={1000}
+            animationOutDuration={1000}
+            isVisible={true}
+          >
             <img src={addFileImg} alt="Upload File" />
           </Animated>
         </UploadInfoContainer>
       </Container>
-      <Footer />
     </div>
   );
 };

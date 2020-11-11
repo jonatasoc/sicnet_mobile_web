@@ -1,11 +1,11 @@
 import React from 'react';
 
+import { Container } from './styles';
+
 export default function Ios() {
   return (
     <>
-      <div id="page-android">
-        <h1>Olá! iOS!</h1>
-      </div>
+      <Container></Container>
     </>
   );
 }
