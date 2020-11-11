@@ -18,9 +18,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   :root {
-  --color-text-in-primary: #3c3c3c;
-  font-size: 16px;
-  overflow: hidden;
+    --color-text-in-primary: #3c3c3c;
+    font-size: 16px;
   }
 
   a {

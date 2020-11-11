@@ -5,8 +5,6 @@ export const Container = styled.div`
   margin: 10px auto 40px;
 
   nav {
-    border-radius: 0;
-    border: 0;
     background-color: white;
     padding-left: 3px;
     display: flex;
@@ -26,7 +24,6 @@ export const Container = styled.div`
     background-color: #004d6b;
     padding: 8px 0;
     box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
     letter-spacing: 1px;
 
     span {

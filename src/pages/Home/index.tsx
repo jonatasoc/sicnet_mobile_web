@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Container, Content, Title } from './styles';
+import { Container, Content, Title, SelectOS } from './styles';
 import './styles.css';
 
 const Home: React.FC = () => {
@@ -12,21 +12,21 @@ const Home: React.FC = () => {
         <Title>Selecione o tipo de sistema do seu smartphone</Title>
         <Content className="animated fadeIn">
           <div>
-            <div className="section-select-os">
+            <SelectOS>
               <Link to="/android">
                 <FontAwesomeIcon icon={['fab', 'android']} />
                 <p className="android">Android</p>
               </Link>
-            </div>
+            </SelectOS>
             <hr />
-            <div className="section-select-os">
+            <SelectOS>
               <Link to="/ios">
                 <FontAwesomeIcon icon={['fab', 'apple']} />
                 <p className="ios">
-                  iOS <i>(iPhone, iPad)</i>{' '}
+                  iOS <i>(iPhone, iPad)</i>
                 </p>
               </Link>
-            </div>
+            </SelectOS>
           </div>
         </Content>
       </Container>

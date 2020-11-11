@@ -5,18 +5,27 @@ export const Container = styled.div`
   margin: 0 auto;
 `;
 
+export const Title = styled.h2`
+  color: var(--color-text-in-primary);
+  font-size: 1.2rem;
+  padding: 0 8px;
+  text-align: center;
+  margin-bottom: 8px;
+  margin-top: -25px;
+`;
+
 export const Content = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 10px 10px;
 
   > div {
-    box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+    box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5),
+      0 7px 30px -10px rgba(150, 170, 180, 0.5);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* max-width: 94vw; */
     margin: 0 auto;
     border-radius: 1.2rem;
     padding: 15px 0px;
@@ -25,17 +34,71 @@ export const Content = styled.div`
       display: flex;
       max-width: 60vw;
       height: 60vh;
-      flex-direction: row;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
     }
+  }
+
+  hr {
+    border: 0;
+    width: 32%;
+    background-color: #e0e0e0;
+    height: 1px;
   }
 `;
 
-export const Title = styled.h2`
-  color: var(--color-text-in-primary);
-  font-size: 1.5rem;
+export const SelectOS = styled.section`
+  transition: background-color 0.2s ease;
+  border-radius: 5px;
+  padding: 2rem 2rem;
   text-align: center;
-  margin-bottom: 25px;
-  margin-top: -25px;
+  margin-bottom: 15px;
+  width: 300px;
+
+  &:hover {
+    transform: translate(0, -3px);
+    background-color: #43a8ed;
+    padding: 2rem 2rem;
+  }
+
+  p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0 5px;
+    letter-spacing: 0.1rem;
+
+    &.android {
+      color: #79c257;
+      opacity: 0.8;
+    }
+
+    &.ios {
+      color: #000;
+      opacity: 0.8;
+    }
+  }
+
+  svg {
+    font-size: 40px;
+  }
+
+  svg[data-icon='android'] {
+    margin-top: 15px;
+    color: #79c257;
+  }
+
+  svg[data-icon='apple'] {
+    margin-top: 15px;
+    color: #000;
+  }
+
+  &:hover svg,
+  &:hover p,
+  &:focus svg,
+  &:focus p {
+    color: #fff;
+    cursor: pointer;
+  }
 `;
