@@ -10,7 +10,6 @@ const GlobalStyle = createGlobalStyle`
 
   html, body, #root {
     height: 100vh;
-    margin: 0 auto;
     max-width: 1280px;
 }
 
@@ -20,7 +19,8 @@ const GlobalStyle = createGlobalStyle`
 
   :root {
   --color-text-in-primary: #3c3c3c;
-  font-size: 80%;
+  font-size: 16px;
+  overflow: hidden;
   }
 
   a {

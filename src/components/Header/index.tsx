@@ -8,10 +8,12 @@ export default function Header() {
     <Container>
       <nav>
         <Link to="/">
-          <img src={logo} className="logo" alt="Logo ANEEL" />
+          <img src={logo} alt="Logo ANEEL" />
         </Link>
       </nav>
-      <h1 id="intro">SicNet Mobile - Download</h1>
+      <h1 id="intro">
+        SicNet Mobile <span>Download</span>
+      </h1>
     </Container>
   );
 }

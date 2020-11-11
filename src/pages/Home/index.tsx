@@ -2,19 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import PageHeader from '../../components/Header';
-import PageFooter from '../../components/Footer';
-import { Title } from './styles';
+import { Container, Content, Title } from './styles';
 import './styles.css';
 
 const Home: React.FC = () => {
   return (
     <>
-      <PageHeader />
-      <div id="page-home">
-        <div id="page-home-content" className="animated fadeIn">
-          <Title>Selecione o tipo de sistema do seu smartphone</Title>
-          <div className="section-select">
+      <Container>
+        <Title>Selecione o tipo de sistema do seu smartphone</Title>
+        <Content className="animated fadeIn">
+          <div>
             <div className="section-select-os">
               <Link to="/android">
                 <FontAwesomeIcon icon={['fab', 'android']} />
@@ -31,9 +28,8 @@ const Home: React.FC = () => {
               </Link>
             </div>
           </div>
-        </div>
-      </div>
-      <PageFooter />
+        </Content>
+      </Container>
     </>
   );
 };
