@@ -5,7 +5,7 @@ export const Container = styled.footer`
   margin-top: 5px;
   background: #004d6b;
   color: #fff;
-  padding-left: 8px;
+  padding: 0 0 20px 8px;
 
   hr {
     max-width: 705px;

@@ -31,12 +31,7 @@ export const Content = styled.div`
     padding: 15px 0px;
 
     @media (min-width: 700px) {
-      display: flex;
-      max-width: 60vw;
-      height: 60vh;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+      max-width: 70vw;
     }
   }
 
@@ -59,7 +54,6 @@ export const SelectOS = styled.section`
   &:hover {
     transform: translate(0, -3px);
     background-color: #43a8ed;
-    padding: 2rem 2rem;
   }
 
   p {
