@@ -8,6 +8,7 @@ export default function Footer() {
     <Container>
       <section>
         <h2>DÚVIDAS:</h2>
+        <hr />
         <p>
           Entrar em contato com a equipe de Gestão de Serviços (SGI) através dos
           canais abaixo:
@@ -15,7 +16,7 @@ export default function Footer() {
         <p>
           <strong>
             <FontAwesomeIcon icon={['fas', 'envelope']} />
-            E-mail:
+            <span>E-mail: </span>
           </strong>
           <a href="mailto:ApoioUsuarioSGI@aneel.gov.br?Subject=SicNet-Mobile">
             ApoioUsuarioSGI@aneel.gov.br
@@ -24,8 +25,8 @@ export default function Footer() {
         <p>
           <strong>
             <FontAwesomeIcon icon={['fas', 'phone']} />
-            Ramal:
-          </strong>{' '}
+            <span>Ramal: </span>
+          </strong>
           8368 / 8115
         </p>
       </section>

@@ -6,7 +6,7 @@ export const Container = styled.div`
 
   nav {
     background-color: white;
-    padding-left: 3px;
+    padding-left: 8px;
     display: flex;
 
     img {
