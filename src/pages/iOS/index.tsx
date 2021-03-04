@@ -3,10 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Container, Content, Instructions } from './styles';
 import BackButton from '../../components/Buttons/BackButton';
+import Main from '../../components/Main';
 
 export default function Ios() {
   return (
-    <>
+    <Main>
       <Container className="">
         <Content>
           <FontAwesomeIcon
@@ -53,6 +54,6 @@ export default function Ios() {
           </div>
         </Content>
       </Container>
-    </>
+    </Main>
   );
 }

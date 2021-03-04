@@ -8,8 +8,8 @@ export const Container = styled.footer`
   padding: 0 0 20px 8px;
 
   @media (min-width: 700px) {
-    position: fixed;
-    bottom: 0;
+    /* position: fixed;
+    bottom: 0; */
   }
 
   hr {

@@ -19,6 +19,7 @@ import UploadFile from '../../components/UploadFile';
 import api from '../../services/api';
 import addFileImg from '../../assets/add_file.svg';
 import BackButton from '../../components/Buttons/BackButton';
+import Main from '../../components/Main';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -97,7 +98,7 @@ const Upload: React.FC = () => {
   }, [osType]);
 
   return (
-    <div>
+    <Main>
       <Container>
         <Title>Informe abaixo os dados da nova versão</Title>
         <UploadInfoContainer>
@@ -168,7 +169,7 @@ const Upload: React.FC = () => {
           </Animated>
         </UploadInfoContainer>
       </Container>
-    </div>
+    </Main>
   );
 };
 

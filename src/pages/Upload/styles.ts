@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    box-shadow: 0 7px 30px -10px rgba(150,170,180,0.5);
-    width: 75vw;
-    min-height: 50vh;
-    border-radius: 1.2rem;
-    padding: 15px 0px;
-    margin: 0 auto;
+  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+  width: 75vw;
+  min-height: 50vh;
+  border-radius: 1.2rem;
+  padding: 15px 0px;
+  margin: 0 auto;
 `;
 
 export const Title = styled.h1`
@@ -19,24 +19,24 @@ export const Title = styled.h1`
 `;
 
 export const UploadInfoContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
 
-    div.animated {
-      flex-basis: 30%;
-    }
+  div.animated {
+    flex-basis: 30%;
+  }
 
-    img {
-      width: 80%;
-      height: auto;
-      margin-left: 50px;
-    }
+  img {
+    width: 80%;
+    height: auto;
+    margin-left: 50px;
+  }
 
-    .MuiButton-label svg {
-      margin-right: 5px;
-    }
+  .MuiButton-label svg {
+    margin-right: 5px;
+  }
 `;
 
 export const UploadFooter = styled.section`
@@ -57,19 +57,23 @@ export const UploadFooter = styled.section`
       margin-right: 5px;
     }
   }
+
+  > div {
+    display: flex;
+    align-items: center;
+  }
+
   .MuiButton-containedSizeLarge {
     font-size: 1.2rem;
-    margin-right: 10px;
   }
 `;
 
 export const FileInfo = styled.div`
-    strong {
-      margin-top: 10px;
-      font-size: 12px;
-      color: #363f5f;
-      margin-top: 5px;
-    }
+  strong {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #363f5f;
+    margin-top: 5px;
   }
 `;
 
