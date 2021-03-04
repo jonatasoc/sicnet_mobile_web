@@ -18,6 +18,7 @@ import {
 import UploadFile from '../../components/UploadFile';
 import api from '../../services/api';
 import addFileImg from '../../assets/add_file.svg';
+import BackButton from '../../components/Buttons/BackButton';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -143,16 +144,7 @@ const Upload: React.FC = () => {
                 {osType === 'Android' ? '.apk' : '.ipa'}.
               </p>
               <div className={classesMaterialButtons.root}>
-                <Button
-                  onClick={() => history.push('/')}
-                  variant="contained"
-                  color="default"
-                  size="large"
-                  component="span"
-                >
-                  <FiArrowLeft />
-                  Voltar
-                </Button>
+                <BackButton />
                 <Button
                   onClick={submitFile}
                   variant="contained"

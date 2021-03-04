@@ -77,7 +77,7 @@ export const SelectOS = styled.section`
   }
 
   svg {
-    font-size: 40px;
+    font-size: 50px;
   }
 
   svg[data-icon='android'] {

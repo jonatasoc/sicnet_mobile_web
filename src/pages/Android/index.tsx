@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, Content } from './styles';
 
 export default function Android() {
   return (

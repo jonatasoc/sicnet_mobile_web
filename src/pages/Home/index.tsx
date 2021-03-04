@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Container, Content, Title, SelectOS } from './styles';
-// import './styles.css';
 
 const Home: React.FC = () => {
   return (
