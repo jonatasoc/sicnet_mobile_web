@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { FiAlertTriangle, FiUpload, FiArrowLeft } from 'react-icons/fi';
+import { FiAlertTriangle, FiUpload } from 'react-icons/fi';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
