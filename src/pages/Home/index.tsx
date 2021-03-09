@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Content, Title, OSType } from './styles';
+import { Title, OSType } from './styles';
 import Main from '../../components/Main';
 
 const Home: React.FC = () => {

@@ -14,7 +14,6 @@ import print9 from '../../assets/images/android_tutorial/print9.png';
 import print10 from '../../assets/images/android_tutorial/print10.png';
 import print11 from '../../assets/images/android_tutorial/print11.png';
 import print12 from '../../assets/images/android_tutorial/print12.png';
-import { Container } from './styles';
 
 export default function AndroidCarousel() {
   const [value, setValue] = useState(0);
