@@ -1,186 +1,79 @@
-
 :root {
-  --color-text-in-primary: #3c3c3c;
+  --text: #3c3c3c;
   font-size: 80%;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html, body, #root {
-    height: 100vh;
-    
+html,
+body,
+#root {
+  height: 100vh;
 }
 
-body, input, button, textarea {
+body,
+input,
+button,
+textarea {
   font-family: Lato;
-} 
+}
 
 a:-webkit-any-link {
   text-decoration: none;
 }
 
-.container {
-  width: 90vw;
-  max-width: 700px;
+/*FOOTER */
+footer {
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+  margin-top: 150px;
+  background-color: #004d6b;
+  color: white;
+  box-shadow: 0 8px 6px -4px #999;
 }
-  
-    #texto {
-      margin: 30px 0px 0px 20px;
-    }
-  
-    label.col-form-label {
-      margin-left: 10px;
-    }
-  
-  
-    .btn-primary.btn-apps {
-      background-color: #04668D;
-      border-color: #1565c0;
-      box-shadow: 2px 2px 10px 0 rgba(0,0,0,.26)
-    }
-  
-    .btn-primary.btn-apps:hover, .btn-primary.btn-apps:focus {
-      background-color: #286090;
-      border-color: #286090;
-      color: white;
-    }
-  
-    .btn-primary.btn-voltar {
-      background-color: #707070;
-      border-color: #707070;
-      box-shadow: 2px 2px 10px 0 rgba(0,0,0,.26)
-    }
-  
-    .btn-primary.btn-voltar:hover, .btn-primary.btn-voltar:focus {
-      background-color: #606060;
-      border-color: #606060;
-      color: white;
-    }
-  
-    .btn-primary.btn-carregar {
-      background-color: darkgreen;
-    }  
-  
-    i.center {
-      width: 80%;
-      margin: 0 auto;
-      display: block;
-      text-align: center;
-    }
-  
-    .carousel {
-      box-shadow: 2px 2px 5px #999,
-                 -2px 0px 5px #999;  
-      padding-bottom: 20px;
-    }
-  
-    .carousel-caption {
-      top: 0;
-      bottom: auto;
-    }
-  
-    .carousel-indicators {
-      margin-bottom: -10%;
-    }
-  
-    #carouselTutorial {
-      max-height: 768px;
-      max-width: 768px;
-      margin: 0 auto;
-    }
-  
-    .carousel-item > img {
-      max-height: 520px;
-      max-width: 520px;
-      margin: 0 auto;
-    }
-  
-    .fa-caret-left, .fa-caret-right {
-      width: 2.5rem;
-      height: 2.5rem;
-      margin-top: -55px;
-  
-    }
-  
-   .fa-caret-left {
-      margin-left: -160%;
-    }
-  
-  .fa-caret-right {
-      margin-right: -160%;
-    }
-  
-  .tutorial-steps {
-    background-color: black;
-    max-width: 520px;
-    opacity: .8;
-    margin: -20px 0 0 8px;
-    padding: 5px 5px;
-    text-align: center;
-    font-size: 16px;
-    
+
+@media (max-width: 736px) {
+  #intro {
+    font-size: 20px;
   }
-  
-  
-  
-  /*FOOTER */
-    footer {
-      margin-bottom: 30px;
-      padding-bottom: 25px;
-      margin-top: 150px;
-      background-color: #004d6b;
-      color: white;
-      box-shadow: 0 8px 6px -4px #999;  
-    }
-  
-   
-  @media (max-width: 736px) {
-    
-      #intro {
-        font-size: 20px;
-      }
-  
-      .tutorial-steps {
-        font-size: 14px;
-      } 
-  
-   }
-      
-  @media (max-width: 479px) {
-    
-    #contato {
-      font-size: 95%
-    }
-  
-    footer {
-      margin-top: 60px;
-      padding-bottom: 25px;
-    }
-  
-     .carousel-item > img {
-      max-height: 250px;
-      max-width: 250px;
-      margin: 0 auto;
-    }
-  
-    .tutorial-steps {
+
+  .tutorial-steps {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 479px) {
+  #contato {
+    font-size: 95%;
+  }
+
+  footer {
+    margin-top: 60px;
+    padding-bottom: 25px;
+  }
+
+  .carousel-item > img {
+    max-height: 250px;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .tutorial-steps {
     max-width: 250px;
     font-size: 10px;
-    
-    }  
-  
-    p.display-4 {
-      font-size: 25px;
-    }
-  
-   }
+  }
+
+  p.display-4 {
+    font-size: 25px;
+  }
+}
 
 @media (min-width: 700px) {
-    :root {
-        font-size: 62.5%
-    }
+  :root {
+    font-size: 62.5%;
+  }
 }

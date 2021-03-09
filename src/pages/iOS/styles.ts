@@ -1,28 +1,14 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  width: 100vw;
-  margin: 0 auto;
-`;
 export const Content = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 10px 10px;
-
-  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5),
-    0 7px 30px -10px rgba(150, 170, 180, 0.5);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  border-radius: 1.2rem;
-  padding: 15px 0px;
-
-  @media (min-width: 700px) {
-    max-width: 70vw;
-    height: 400px;
-  }
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  max-width: 800px;
+  margin: 0 auto 20px;
 
   > svg {
     font-size: 60px;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Content } from '../../pages/Home/styles';
 import Footer from '../Footer';
 import Header from '../Header';
 
@@ -8,7 +9,7 @@ const Main: React.FC = ({ children }) => {
   return (
     <Container>
       <Header />
-      {children}
+      <Content>{children}</Content>
       <Footer />
     </Container>
   );

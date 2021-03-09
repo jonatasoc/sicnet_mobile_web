@@ -9,7 +9,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html, body, #root {
-    height: 100vh;
     width: 100vw;
 }
 
@@ -18,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   :root {
-    --color-text-in-primary: #3c3c3c;
+    --text: #3c3c3c;
     font-size: 16px;
   }
 

@@ -1,40 +1,27 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  width: 100vw;
-  margin: 0 auto;
-`;
-
 export const Title = styled.h2`
-  color: var(--color-text-in-primary);
+  color: var(--text);
   font-size: 1.2rem;
   padding: 0 8px;
   text-align: center;
-  margin-bottom: 8px;
-  margin-top: -25px;
+  margin-bottom: 20px;
 `;
 
-export const Content = styled.div`
+export const Content = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
   max-width: 800px;
-  margin: 0 auto;
-  padding: 10px 10px;
+  margin: 0 auto 20px;
 
-  > div {
-    box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5),
-      0 7px 30px -10px rgba(150, 170, 180, 0.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    border-radius: 1.2rem;
-    padding: 15px 0px;
+  border-radius: 1.2rem;
+  padding: 15px;
 
-    @media (min-width: 700px) {
-      max-width: 70vw;
-      height: 400px;
-    }
-  }
+  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
 
   hr {
     border: 0;
@@ -45,7 +32,7 @@ export const Content = styled.div`
   }
 `;
 
-export const SelectOS = styled.section`
+export const OSType = styled.div`
   transition: background-color 0.2s ease;
   border-radius: 5px;
   padding: 2rem 2rem;
