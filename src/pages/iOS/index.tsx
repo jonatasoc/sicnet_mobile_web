@@ -18,7 +18,7 @@ export default function Ios() {
           iOS <i>(iPhone, iPad)</i>
         </p>
 
-        <Instructions id="texto" className="animated bounceInLeft">
+        <Instructions id="texto" className="animated bounceInRight">
           <p>
             Após a instalação do aplicativo SICNET - ASSINAR, realize os
             seguintes procedimentos:

@@ -1,91 +1,54 @@
 import React, { useState } from 'react';
-import Carousel, { Dots } from '@brainhubeu/react-carousel';
+import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 
-import print1 from '../../assets/images/android_tutorial/print1b.png';
-import print2 from '../../assets/images/android_tutorial/print2.png';
-import print3 from '../../assets/images/android_tutorial/print3.png';
-import print4 from '../../assets/images/android_tutorial/print4.png';
-import print5 from '../../assets/images/android_tutorial/print5.png';
-import print6 from '../../assets/images/android_tutorial/print6.png';
-import print7 from '../../assets/images/android_tutorial/print7.png';
-import print8 from '../../assets/images/android_tutorial/print8.png';
-import print9 from '../../assets/images/android_tutorial/print9.png';
-import print10 from '../../assets/images/android_tutorial/print10.png';
-import print11 from '../../assets/images/android_tutorial/print11.png';
-import print12 from '../../assets/images/android_tutorial/print12.png';
+import { FiArrowLeftCircle, FiArrowRightCircle } from 'react-icons/fi';
+import styled from 'styled-components';
 
 export default function AndroidCarousel() {
-  const [value, setValue] = useState(0);
+  const [slideIndex, setSlideIndex] = useState(0);
 
-  const onChange = (newValue: number) => {
-    setValue(newValue);
+  const handleSlideIndexBack = () => {
+    if (slideIndex === 0) {
+      return;
+    }
+    setSlideIndex(slideIndex - 1);
   };
+
+  const handleSlideIndexForward = () => {
+    if (slideIndex === 11) {
+      return;
+    }
+    setSlideIndex(slideIndex + 1);
+  };
+
   return (
-    <>
-      <Carousel plugins={['arrows']}>
-        <img
-          src={print1}
-          alt="Android Tutorial"
-          style={{ width: '70%', height: 'auto' }}
-        />
-        <img
-          src={print2}
-          alt="Android Tutorial"
-          style={{ width: '70%', height: 'auto' }}
-        />
-        <img
-          src={print3}
-          alt="Android Tutorial"
-          style={{ width: '70%', height: 'auto' }}
-        />
-        <img
-          src={print4}
-          alt="Android Tutorial"
-          style={{ width: '70%', height: 'auto' }}
-        />
-        <img
-          src={print5}
-          alt="Android Tutorial"
-          style={{ width: '70%', height: 'auto' }}
-        />
-        <img
-          src={print6}
-          alt="Android Tutorial"
-          style={{ width: '70%', height: 'auto' }}
-        />
-        <img
-          src={print7}
-          alt="Android Tutorial"
-          style={{ width: '70%', height: 'auto' }}
-        />
-        <img
-          src={print8}
-          alt="Android Tutorial"
-          style={{ width: '70%', height: 'auto' }}
-        />
-        <img
-          src={print9}
-          alt="Android Tutorial"
-          style={{ width: '70%', height: 'auto' }}
-        />
-        <img
-          src={print10}
-          alt="Android Tutorial"
-          style={{ width: '70%', height: 'auto' }}
-        />
-        <img
-          src={print11}
-          alt="Android Tutorial"
-          style={{ width: '70%', height: 'auto' }}
-        />
-        <img
-          src={print12}
-          alt="Android Tutorial"
-          style={{ width: '70%', height: 'auto' }}
-        />
-      </Carousel>
-      <Dots value={value} onChange={onChange} />
-    </>
+    <Container>
+      {slideIndex > 0 && <FiArrowLeftCircle onClick={handleSlideIndexBack} />}
+      <Carousel
+        value={slideIndex}
+        slides={[
+          <img
+            src={`/android_tutorial/print${slideIndex}.png`}
+            alt="Android Tutorial"
+            style={{ width: '70%', height: 'auto' }}
+          />,
+        ]}
+      ></Carousel>
+      {slideIndex !== 11 && (
+        <FiArrowRightCircle onClick={handleSlideIndexForward} />
+      )}
+    </Container>
   );
 }
+
+const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  svg:first-child,
+  svg:last-child {
+    cursor: pointer;
+  }
+`;

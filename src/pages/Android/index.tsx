@@ -12,13 +12,12 @@ export default function Android() {
     <Main>
       <Content className="animated bounceInRight">
         <FontAwesomeIcon icon={['fab', 'android']} />
-        <p className="ios text-center" id="NomeSO">
-          Android
-        </p>
+        <p className="">Android</p>
 
-        <Instructions id="texto"></Instructions>
-        <AndroidCarousel />
-        <hr />
+        <Instructions>
+          <strong>ATENÇÃO:</strong> Após baixar o aplicativo, siga os passos
+          abaixo para seguir com a instalação.
+        </Instructions>
         <div>
           <ButtonsContainer>
             <BackButton />
@@ -27,6 +26,8 @@ export default function Android() {
             </DownloadButton>
           </ButtonsContainer>
         </div>
+        <hr />
+        <AndroidCarousel />
       </Content>
     </Main>
   );

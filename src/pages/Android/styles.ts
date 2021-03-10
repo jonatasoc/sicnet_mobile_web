@@ -27,15 +27,12 @@ export const Content = styled.div`
 `;
 
 export const Instructions = styled.div`
-  margin-top: 25px;
+  background-color: #d9edf7;
+  border-color: #bcdff1;
+  color: #31708f;
 
-  > p {
-    margin-bottom: 10px;
-  }
-
-  > ol {
-    margin-left: 30px;
-  }
+  margin: 25px 0;
+  padding: 1rem;
 `;
 
 export const ButtonsContainer = styled.div`
