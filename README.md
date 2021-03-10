@@ -17,10 +17,32 @@
    <img src=".github/home.jpg" width="auto"/>
 </p>
 <p align="center">
+   Home
+</p>
+<p align="center">
    <img src=".github/android.jpg" width="auto"/>
 </p>
 <p align="center">
+   Android
+</p>
+<p align="center">
    <img src=".github/upload.jpg" width="auto"/>
+</p>
+<p align="center">
+   Upload new version
+</p>
+<p align="center">
+   <img src=".github/home_mobile.jpg" width="auto"/>
+</p>
+<p align="center">
+   Home - Mobile
+</p>
+
+<p align="center">
+   <img src=".github/upload_mobile.jpg" width="auto"/>
+</p>
+<p align="center">
+   Upload - Mobile
 </p>
 
 ---
