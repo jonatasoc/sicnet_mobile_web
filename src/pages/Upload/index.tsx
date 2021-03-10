@@ -9,11 +9,11 @@ import { Animated } from 'react-animated-css';
 
 import {
   Title,
-  Container,
   UploadFooter,
   UploadInfoContainer,
   FileInfo,
   UploadFileErrMsg,
+  ButtonsContainer,
 } from './styles';
 import UploadFile from '../../components/UploadFile';
 import api from '../../services/api';
@@ -99,76 +99,74 @@ const Upload: React.FC = () => {
 
   return (
     <Main>
-      <Container>
-        <Title>Informe abaixo os dados da nova versão</Title>
-        <UploadInfoContainer>
-          <div>
-            <div className={classesMaterialButtons.root}>
-              <TextField
-                required
-                id="version_number"
-                label="Versão"
-                helperText="Informe a versão"
-                variant="outlined"
-                value={appVersion}
-                onChange={handleAppVersionChange}
-                error={errAppVersionValidation}
-              />
-              <TextField
-                id="os_type"
-                select
-                label="Selecione"
-                value={osType}
-                onChange={handleOsTypeChange}
-                helperText="Selecione o tipo de Sistema"
-                variant="outlined"
-              >
-                <MenuItem value="Android">Android</MenuItem>
-                <MenuItem value="iOS">iOS</MenuItem>
-              </TextField>
-            </div>
-            <UploadFile onUpload={handleUpload} osType={osType} />
-            {errAppFileValidation && (
-              <UploadFileErrMsg>
-                Necessário selecionar o arquivo para envio.
-              </UploadFileErrMsg>
-            )}
-            {uploadedFile?.name && (
-              <FileInfo>
-                <strong>{uploadedFile.name}</strong>
-              </FileInfo>
-            )}
-            <UploadFooter>
-              <p>
-                <FiAlertTriangle size={16} style={{ display: 'block' }} />
-                Permitido apenas arquivos{' '}
-                {osType === 'Android' ? '.apk' : '.ipa'}.
-              </p>
-              <div className={classesMaterialButtons.root}>
-                <BackButton />
-                <Button
-                  onClick={submitFile}
-                  variant="contained"
-                  color="primary"
-                  size="large"
-                  component="span"
-                >
-                  <FiUpload /> Upload
-                </Button>
-              </div>
-            </UploadFooter>
+      <Title>Informe abaixo os dados da nova versão</Title>
+      <UploadInfoContainer>
+        <div>
+          <div className={classesMaterialButtons.root}>
+            <TextField
+              required
+              id="version_number"
+              label="Versão"
+              helperText="Informe a versão"
+              variant="outlined"
+              value={appVersion}
+              onChange={handleAppVersionChange}
+              error={errAppVersionValidation}
+            />
+            <TextField
+              id="os_type"
+              select
+              label="Selecione"
+              value={osType}
+              onChange={handleOsTypeChange}
+              helperText="Selecione o tipo de Sistema"
+              variant="outlined"
+            >
+              <MenuItem value="Android">Android</MenuItem>
+              <MenuItem value="iOS">iOS</MenuItem>
+            </TextField>
           </div>
-          <Animated
-            animationIn="bounceInRight"
-            animationOut="zoomOutDown"
-            animationInDuration={1000}
-            animationOutDuration={1000}
-            isVisible={true}
-          >
-            <img src={addFileImg} alt="Upload File" />
-          </Animated>
-        </UploadInfoContainer>
-      </Container>
+          <UploadFile onUpload={handleUpload} osType={osType} />
+          {errAppFileValidation && (
+            <UploadFileErrMsg>
+              Necessário selecionar o arquivo para envio.
+            </UploadFileErrMsg>
+          )}
+          {uploadedFile?.name && (
+            <FileInfo>
+              <strong>{uploadedFile.name}</strong>
+            </FileInfo>
+          )}
+          <UploadFooter>
+            <p>
+              <FiAlertTriangle size={16} style={{ display: 'block' }} />
+              Permitido apenas arquivos {osType === 'Android' ? '.apk' : '.ipa'}
+              .
+            </p>
+            <ButtonsContainer>
+              <BackButton />
+              <Button
+                onClick={submitFile}
+                variant="contained"
+                color="primary"
+                size="medium"
+                component="span"
+              >
+                <FiUpload /> Upload
+              </Button>
+            </ButtonsContainer>
+          </UploadFooter>
+        </div>
+        <Animated
+          animationIn="bounceInRight"
+          animationOut="zoomOutDown"
+          animationInDuration={1000}
+          animationOutDuration={1000}
+          isVisible={true}
+        >
+          <img src={addFileImg} alt="Upload File" />
+        </Animated>
+      </UploadInfoContainer>
     </Main>
   );
 };

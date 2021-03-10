@@ -1,14 +1,5 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
-  width: 75vw;
-  min-height: 50vh;
-  border-radius: 1.2rem;
-  padding: 15px 0px;
-  margin: 0 auto;
-`;
-
 export const Title = styled.h1`
   font-weight: 500;
   font-size: 2rem;
@@ -79,4 +70,14 @@ export const FileInfo = styled.div`
 
 export const UploadFileErrMsg = styled.p`
   color: #f44336;
+`;
+
+export const ButtonsContainer = styled.div`
+  > span {
+    margin-right: 10px;
+  }
+
+  a {
+    color: #fff;
+  }
 `;
