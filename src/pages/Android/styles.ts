@@ -5,8 +5,6 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
   min-height: 600px;
   max-width: 800px;
   margin: 0 auto 20px;
@@ -37,5 +35,15 @@ export const Instructions = styled.div`
 
   > ol {
     margin-left: 30px;
+  }
+`;
+
+export const ButtonsContainer = styled.div`
+  > span {
+    margin-right: 10px;
+  }
+
+  a {
+    color: #fff;
   }
 `;

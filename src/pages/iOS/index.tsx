@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Content, Instructions } from './styles';
 import BackButton from '../../components/Buttons/BackButton';
 import Main from '../../components/Main';
+import { ButtonsContainer } from '../Android/styles';
+import DownloadButton from '../../components/Buttons/DownloadButton';
 
 export default function Ios() {
   return (
@@ -41,15 +43,15 @@ export default function Ios() {
           </div>
         </Instructions>
         <hr />
-        <div className="text-center">
-          <a
-            className="btn btn-primary btn-apps"
-            href="itms-services://?action=download-manifest&url=https://sicnetmobile.aneel.gov.br/manifest.plist"
-            role="button"
-          >
-            Baixar aplicativo
-          </a>
-          <BackButton />
+        <div>
+          <ButtonsContainer>
+            <BackButton />
+            <DownloadButton>
+              <a href="itms-services://?action=download-manifest&url=https://sicnetmobile.aneel.gov.br/manifest.plist">
+                Download
+              </a>
+            </DownloadButton>
+          </ButtonsContainer>
         </div>
       </Content>
     </Main>

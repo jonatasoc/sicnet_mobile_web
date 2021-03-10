@@ -14,13 +14,11 @@ export default function Footer() {
           canais abaixo:
         </p>
         <p>
-          <p>
-            <FontAwesomeIcon icon={['fas', 'envelope']} />
-            <span>E-mail: </span>
-            <a href="mailto:ApoioUsuarioSGI@aneel.gov.br?Subject=SicNet-Mobile">
-              ApoioUsuarioSGI@aneel.gov.br
-            </a>
-          </p>
+          <FontAwesomeIcon icon={['fas', 'envelope']} />
+          <span>E-mail: </span>
+          <a href="mailto:ApoioUsuarioSGI@aneel.gov.br?Subject=SicNet-Mobile">
+            ApoioUsuarioSGI@aneel.gov.br
+          </a>
         </p>
         <p>
           <FontAwesomeIcon icon={['fas', 'phone']} />
