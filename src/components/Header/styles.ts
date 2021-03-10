@@ -8,12 +8,27 @@ export const Container = styled.header`
     background-color: white;
     padding-left: 8px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     img {
       width: 70%;
       height: auto;
     }
+
+    svg {
+      color: #004d6b;
+      font-size: 2rem;
+      margin-right: 2rem;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        filter: brightness(0.9);
+      }
+    }
   }
+
   h1 {
     color: #f2f2f2;
     font-size: 1.4rem;
