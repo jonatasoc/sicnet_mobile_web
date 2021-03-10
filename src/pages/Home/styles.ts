@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const Title = styled.h2`
+export const Title = styled.p`
   color: var(--text);
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding: 0 8px;
   text-align: center;
   margin-bottom: 20px;
@@ -11,12 +11,12 @@ export const Title = styled.h2`
 export const Content = styled.section`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
-  min-height: 600px;
+  min-height: 500px;
   max-width: 800px;
-  margin: 0 auto 20px;
+  margin-bottom: 60px;
 
   border-radius: 1.2rem;
   padding: 15px;

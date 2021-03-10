@@ -6,6 +6,8 @@ export const Container = styled.footer`
   background: #004d6b;
   color: #fff;
   padding: 0 0 20px 8px;
+  border-radius: 5px;
+  font-family: Roboto;
 
   hr {
     max-width: 705px;
@@ -27,12 +29,15 @@ export const Container = styled.footer`
         margin-right: 7px;
       }
     }
+
     p:first-of-type {
       margin-bottom: 10px;
     }
+
     a {
       color: #fff;
       font-style: italic;
+      font-size: 0.9rem;
     }
   }
 `;

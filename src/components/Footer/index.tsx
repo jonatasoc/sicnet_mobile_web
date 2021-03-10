@@ -14,20 +14,17 @@ export default function Footer() {
           canais abaixo:
         </p>
         <p>
-          <strong>
+          <p>
             <FontAwesomeIcon icon={['fas', 'envelope']} />
             <span>E-mail: </span>
-          </strong>
-          <a href="mailto:ApoioUsuarioSGI@aneel.gov.br?Subject=SicNet-Mobile">
-            ApoioUsuarioSGI@aneel.gov.br
-          </a>
+            <a href="mailto:ApoioUsuarioSGI@aneel.gov.br?Subject=SicNet-Mobile">
+              ApoioUsuarioSGI@aneel.gov.br
+            </a>
+          </p>
         </p>
         <p>
-          <strong>
-            <FontAwesomeIcon icon={['fas', 'phone']} />
-            <span>Ramal: </span>
-          </strong>
-          8368 / 8115
+          <FontAwesomeIcon icon={['fas', 'phone']} />
+          <span style={{ fontSize: '0.9rem' }}>Ramal: 8368 / 8115</span>
         </p>
       </section>
     </Container>

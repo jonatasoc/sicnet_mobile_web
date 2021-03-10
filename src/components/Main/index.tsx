@@ -1,9 +1,8 @@
 import React from 'react';
-import { Content } from '../../pages/Home/styles';
 import Footer from '../Footer';
 import Header from '../Header';
 
-import { Container } from './styles';
+import { Container, Content } from './styles';
 
 const Main: React.FC = ({ children }) => {
   return (
