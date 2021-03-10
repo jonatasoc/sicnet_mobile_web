@@ -39,7 +39,7 @@
 </p>
 
 <p align="center">
-   <img src=".github/upload_mobile.jpg" width="auto"/>
+   <img src=".github/upload_mobile2.jpg" width="auto"/>
 </p>
 <p align="center">
    Upload - Mobile
