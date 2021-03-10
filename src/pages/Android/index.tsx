@@ -23,7 +23,7 @@ export default function Android() {
           <ButtonsContainer>
             <BackButton />
             <DownloadButton>
-              <a href="#">Download</a>
+              <a href="/">Download</a>
             </DownloadButton>
           </ButtonsContainer>
         </div>
