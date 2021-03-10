@@ -7,11 +7,15 @@ export const Title = styled.h1`
   color: #363f5f;
   text-align: center;
   margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    line-height: 20px;
+  }
 `;
 
 export const UploadInfoContainer = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: flex-start;
 
@@ -27,6 +31,24 @@ export const UploadInfoContainer = styled.div`
 
   .MuiButton-label svg {
     margin-right: 5px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    > div {
+      order: 2;
+    }
+
+    div.animated {
+      order: 1;
+
+      img {
+        width: 50%;
+      }
+    }
   }
 `;
 
