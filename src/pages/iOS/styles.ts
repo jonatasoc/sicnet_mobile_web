@@ -30,3 +30,13 @@ export const Instructions = styled.div`
     margin-left: 30px;
   }
 `;
+
+export const ButtonsContainer = styled.div`
+  > span {
+    margin-right: 10px;
+  }
+
+  a {
+    color: #fff;
+  }
+`;

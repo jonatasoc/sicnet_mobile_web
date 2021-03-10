@@ -1,10 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Content, Instructions } from './styles';
+import { Content, Instructions, ButtonsContainer } from './styles';
 import BackButton from '../../components/Buttons/BackButton';
 import Main from '../../components/Main';
-import { ButtonsContainer } from '../Android/styles';
 import DownloadButton from '../../components/Buttons/DownloadButton';
 
 export default function Ios() {
