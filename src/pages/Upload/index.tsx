@@ -6,15 +6,8 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
 import { Animated } from 'react-animated-css';
+import styled from 'styled-components';
 
-import {
-  Title,
-  UploadFooter,
-  UploadInfoContainer,
-  FileInfo,
-  UploadFileErrMsg,
-  ButtonsContainer,
-} from './styles';
 import UploadFile from '../../components/UploadFile';
 import api from '../../services/api';
 import addFileImg from '../../assets/add_file.svg';
@@ -172,3 +165,107 @@ const Upload: React.FC = () => {
 };
 
 export default Upload;
+
+const Title = styled.h1`
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 54px;
+  color: #363f5f;
+  text-align: center;
+  margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    line-height: 20px;
+  }
+`;
+
+const UploadInfoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  div.animated {
+    flex-basis: 30%;
+  }
+
+  img {
+    width: 80%;
+    height: auto;
+    margin-left: 50px;
+  }
+
+  .MuiButton-label svg {
+    margin-right: 5px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    > div {
+      order: 2;
+    }
+
+    div.animated {
+      order: 1;
+
+      img {
+        width: 50%;
+      }
+    }
+  }
+`;
+
+const UploadFooter = styled.section`
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  p {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 18px;
+    color: #969cb3;
+    margin-bottom: 15px;
+
+    svg {
+      margin-right: 5px;
+    }
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+  }
+
+  .MuiButton-containedSizeLarge {
+    font-size: 1.2rem;
+  }
+`;
+
+const FileInfo = styled.div`
+  strong {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #363f5f;
+    margin-top: 5px;
+  }
+`;
+
+const UploadFileErrMsg = styled.p`
+  color: #f44336;
+`;
+
+const ButtonsContainer = styled.div`
+  > span {
+    margin-right: 10px;
+  }
+
+  a {
+    color: #fff;
+  }
+`;
