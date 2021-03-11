@@ -3,7 +3,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 
-import Routers from './routers';
+import Routers from './routes';
 import GlobalStyle from './styles/styles';
 
 library.add(fas, fab);
