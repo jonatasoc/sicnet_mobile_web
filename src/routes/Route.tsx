@@ -19,6 +19,8 @@ const Route: React.FC<RouteProps> = ({
 }) => {
   const { user } = useAuth();
 
+  console.log('adfadf');
+
   return (
     <ReactDOMRoute
       {...rest}
@@ -28,7 +30,7 @@ const Route: React.FC<RouteProps> = ({
         ) : (
           <Redirect
             to={{
-              pathname: isPrivate ? '/' : '/login',
+              pathname: isPrivate ? '/login' : '/',
               state: { from: location },
             }}
           />
