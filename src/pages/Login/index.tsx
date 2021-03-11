@@ -1,69 +1,101 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { FiLogIn } from 'react-icons/fi';
+import { FiLogIn, FiSend } from 'react-icons/fi';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import styled from 'styled-components';
+// import * as Yup from 'yup';
+
+import { useAuth } from '../../hooks/auth';
+import { useToast } from '../../hooks/toast';
 
 import api from '../../services/api';
-import addFileImg from '../../assets/add_file.svg';
-import BackButton from '../../components/Buttons/BackButton';
 import Main from '../../components/Main';
 
-interface FileProps {
-  file: File;
-  name: string;
-}
-
 const Login: React.FC = () => {
-  const [uploadedFile, setUploadedFiles] = useState<FileProps | any>(null);
-  const [osType, setOsType] = useState('Android');
-  const [appVersion, setAppVersion] = useState('');
-  const [errAppVersionValidation, setErrAppVersionValidation] = useState(false);
-  const [errAppFileValidation, setErrAppFileValidation] = useState(false);
+  const [fieldValues, setFieldValues] = useState({
+    username: '',
+    password: '',
+  });
+  const [usernameValidationError, setUsernameValidationError] = useState('');
+  const [passwordValidationError, setPasswrodValidationError] = useState('');
+
+  const { addToast } = useToast();
+  const { signIn } = useAuth();
 
   const history = useHistory();
 
-  const handleOsTypeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setOsType(event.target.value);
-  };
-  const handleAppVersionChange = (
-    event: React.ChangeEvent<HTMLInputElement>,
-  ) => {
-    setErrAppVersionValidation(false);
-    setAppVersion(event.target.value);
-  };
+  const handleSubmit = useCallback(
+    async event => {
+      event.preventDefault();
 
-  useEffect(() => {
-    setUploadedFiles(null);
-  }, [osType]);
+      try {
+        await signIn({
+          username: fieldValues.username,
+          password: fieldValues.password,
+        });
+
+        // TODO: If aluno go to /aluno, if admin go to /admin
+        history.push('/upload');
+
+        // history.push('/admin');
+      } catch (err) {
+        console.log(err);
+
+        addToast({
+          type: 'error',
+          title: 'Erro na autenticação',
+          description:
+            'Ocorreu um erro ao fazer login, verifique as credenciais.',
+        });
+      }
+    },
+    [signIn, addToast, history, fieldValues],
+  );
+
+  const handleChange = useCallback(
+    name => (event: React.ChangeEvent<HTMLInputElement>) => {
+      setFieldValues({ ...fieldValues, [name]: event.target.value });
+    },
+    [fieldValues],
+  );
 
   return (
     <Main>
       <Title>Digite abaixo o seu usuário e senha</Title>
       <div>
         <div>
-          <TextField
-            required
-            id="version_number"
-            label="Versão"
-            helperText="Informe a versão"
-            variant="outlined"
-            value={appVersion}
-            onChange={handleAppVersionChange}
-            error={errAppVersionValidation}
-          />
-          <ButtonsContainer>
-            <BackButton />
+          <form>
+            <TextField
+              name="username"
+              label="Identificação / E-mail"
+              placeholder="Nome de usuário ou E-mail"
+              onChange={handleChange('username')}
+              onBlur={() => setUsernameValidationError('')}
+              error={!!usernameValidationError}
+            />
+            {usernameValidationError && <span>{usernameValidationError}</span>}
+            <TextField
+              name="password"
+              type="password"
+              label="Senha"
+              placeholder="Senha"
+              onChange={handleChange('password')}
+              onBlur={() => setPasswrodValidationError('')}
+              error={!!passwordValidationError}
+            />
+            {passwordValidationError && <span>{passwordValidationError}</span>}
+
             <Button
               variant="contained"
               color="primary"
-              size="medium"
-              component="span"
+              type="button"
+              onClick={handleSubmit}
             >
-              <FiLogIn /> Login
+              <FiSend />
+              Entrar
             </Button>
-          </ButtonsContainer>
+          </form>
         </div>
       </div>
     </Main>

@@ -2,15 +2,13 @@ import React, { createContext, useCallback, useContext, useState } from 'react';
 import api from '../services/api';
 
 interface SignInCredentials {
-  email: string;
+  username: string;
   password: string;
 }
 
 interface User {
   id: string;
-  name: string;
-  email: string;
-  avatar_url: string;
+  username: string;
 }
 
 interface AuthContextData {
@@ -29,8 +27,8 @@ const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 const AuthProvider: React.FC = ({ children }) => {
   const [data, setData] = useState<AuthState>(() => {
-    const token = localStorage.getItem('@GoBarber: token');
-    const user = localStorage.getItem('@GoBarber: user');
+    const token = localStorage.getItem('@SicnetMobile: token');
+    const user = localStorage.getItem('@SicnetMobile: user');
 
     if (token && user) {
       api.defaults.headers.authorization = `Bearer ${token}`;
@@ -41,17 +39,17 @@ const AuthProvider: React.FC = ({ children }) => {
     return {} as AuthState;
   });
 
-  const signIn = useCallback(async ({ email, password }) => {
+  const signIn = useCallback(async ({ username, password }) => {
     try {
       const response = await api.post('/sessions', {
-        email,
+        username,
         password,
       });
 
       const { token, user } = response.data;
 
-      localStorage.setItem('@GoBarber: token', token);
-      localStorage.setItem('@GoBarber: user', JSON.stringify(user));
+      localStorage.setItem('@SicnetMobile: token', token);
+      localStorage.setItem('@SicnetMobile: user', JSON.stringify(user));
 
       api.defaults.headers.authorization = `Bearer ${token}`;
 
@@ -62,15 +60,15 @@ const AuthProvider: React.FC = ({ children }) => {
   }, []);
 
   const signOut = useCallback(() => {
-    localStorage.removeItem('@GoBarber: token');
-    localStorage.removeItem('@GoBarber: user');
+    localStorage.removeItem('@SicnetMobile: token');
+    localStorage.removeItem('@SicnetMobile: user');
 
     setData({} as AuthState);
   }, []);
 
   const updateUser = useCallback(
     (user: User) => {
-      localStorage.setItem('@GoBarber: user', JSON.stringify(user));
+      localStorage.setItem('@SicnetMobile: user', JSON.stringify(user));
 
       setData({
         token: data.token,
