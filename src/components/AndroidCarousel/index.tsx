@@ -54,7 +54,7 @@ export default function AndroidCarousel() {
         key={slideIndex}
         src={`/android_tutorial/print${slideIndex}.png`}
         alt="Android Tutorial"
-        style={{ width: '70%', height: 'auto' }}
+        style={{ width: '70%', height: '70%' }}
         className="animated fadeIn"
       />
       <MdNavigateNext onClick={handleSlideIndexForward} />
@@ -69,7 +69,7 @@ const Container = styled.div<ContainerProps>`
 
   svg {
     cursor: pointer;
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--blue);
     transition: color 0.2s;
 
