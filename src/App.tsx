@@ -5,15 +5,16 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 
 import Routers from './routes';
 import GlobalStyle from './styles/styles';
+import AppProvider from './hooks';
 
 library.add(fas, fab);
 
 function App() {
   return (
-    <>
+    <AppProvider>
       <Routers />
       <GlobalStyle />
-    </>
+    </AppProvider>
   );
 }
 
