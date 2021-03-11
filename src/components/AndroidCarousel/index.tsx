@@ -23,6 +23,14 @@ export default function AndroidCarousel() {
     }
   }, [slideIndex, isStart, isEnd]);
 
+  // For browser to load all imagens from Carousel
+  useEffect(() => {
+    for (let i = 0; i <= 11; i++) {
+      const img = new Image();
+      img.src = `/android_tutorial/print${i}.png`;
+    }
+  }, []);
+
   const handleSlideIndexBack = useCallback(() => {
     if (slideIndex === 0) {
       return;
