@@ -4,7 +4,6 @@
   "private": true,
   "homepage": "https://sicnetmobile.aneel.gov.br",
   "dependencies": {
-    "@brainhubeu/react-carousel": "^1.19.26",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
@@ -54,7 +53,6 @@
     ]
   },
   "devDependencies": {
-    "@types/brainhubeu__react-carousel": "^2.0.2",
     "@typescript-eslint/eslint-plugin": "^4.4.1",
     "@typescript-eslint/parser": "^4.4.1",
     "babel-plugin-styled-components": "^1.12.0",

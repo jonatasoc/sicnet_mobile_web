@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
 
   :root {
     --text: #3c3c3c;
+    --blue: #004d6b;
     font-size: 16px;
   }
 
