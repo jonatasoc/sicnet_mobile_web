@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { FiLogIn, FiSend } from 'react-icons/fi';
+import { FiLock, FiSend, FiUser } from 'react-icons/fi';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import styled from 'styled-components';
@@ -11,6 +11,7 @@ import { useToast } from '../../hooks/toast';
 
 import api from '../../services/api';
 import Main from '../../components/Main';
+import { InputAdornment } from '@material-ui/core';
 
 const Login: React.FC = () => {
   const [fieldValues, setFieldValues] = useState({
@@ -35,10 +36,7 @@ const Login: React.FC = () => {
           password: fieldValues.password,
         });
 
-        // TODO: If aluno go to /aluno, if admin go to /admin
         history.push('/upload');
-
-        // history.push('/admin');
       } catch (err) {
         console.log(err);
 
@@ -65,11 +63,19 @@ const Login: React.FC = () => {
       <Title>Digite abaixo o seu usuário e senha</Title>
       <div>
         <div>
-          <form>
+          <FormContainer style={{ display: 'flex', flexDirection: 'column' }}>
             <TextField
               name="username"
-              label="Identificação / E-mail"
-              placeholder="Nome de usuário ou E-mail"
+              label="Usuário"
+              placeholder="Nome de usuário"
+              variant="outlined"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <FiUser />
+                  </InputAdornment>
+                ),
+              }}
               onChange={handleChange('username')}
               onBlur={() => setUsernameValidationError('')}
               error={!!usernameValidationError}
@@ -80,6 +86,14 @@ const Login: React.FC = () => {
               type="password"
               label="Senha"
               placeholder="Senha"
+              variant="outlined"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <FiLock />
+                  </InputAdornment>
+                ),
+              }}
               onChange={handleChange('password')}
               onBlur={() => setPasswrodValidationError('')}
               error={!!passwordValidationError}
@@ -95,7 +109,7 @@ const Login: React.FC = () => {
               <FiSend />
               Entrar
             </Button>
-          </form>
+          </FormContainer>
         </div>
       </div>
     </Main>
@@ -118,12 +132,19 @@ const Title = styled.h1`
   }
 `;
 
-const ButtonsContainer = styled.div`
-  > span {
-    margin-right: 10px;
+const FormContainer = styled.form`
+  .MuiFormControl-root {
+    margin-bottom: 20px;
   }
 
-  a {
-    color: #fff;
+  .MuiInputBase-root {
+    svg {
+      font-size: 1.4rem;
+      color: var(--blue);
+    }
+  }
+
+  button svg {
+    margin-right: 8px;
   }
 `;
