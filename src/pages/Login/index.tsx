@@ -144,6 +144,10 @@ const FormContainer = styled.form`
     }
   }
 
+  button {
+    margin-top: 30px;
+  }
+
   button svg {
     margin-right: 8px;
   }
